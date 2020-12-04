@@ -1,0 +1,23 @@
+diff --git a/node_modules/audiosprite/audiosprite.js b/node_modules/audiosprite/audiosprite.js
+index 70f8300..38a7e2a 100755
+--- a/node_modules/audiosprite/audiosprite.js
++++ b/node_modules/audiosprite/audiosprite.js
+@@ -108,13 +108,15 @@ module.exports = function(files) {
+   function makeRawAudioFile(src, cb) {
+     var dest = mktemp('audiosprite')
+     
+-    opts.logger.debug('Start processing', { file: src })
++    opts.logger.debug('Start processing', { file: src})
++
++    var remote = src.includes('https')
+     
+     fs.exists(src, function(exists) {
+-      if (exists) {
++      if (exists || remote) {
+         let code = -1
+         let signal = undefined
+-        let ffmpeg = spawn('ffmpeg', ['-i', path.resolve(src)]
++        let ffmpeg = spawn('ffmpeg', ['-i', remote ? src : path.resolve(src)]
+           .concat(wavArgs).concat('pipe:'))
+         let streamFinished = _.after(2, function () {
+           if (code) {

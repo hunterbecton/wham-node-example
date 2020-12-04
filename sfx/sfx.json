@@ -1,0 +1,28 @@
+{
+  "src": [
+    "sfx.webm",
+    "sfx.mp3"
+  ],
+  "sprite": {
+    "_david_Aeroplane_DistoKick": [
+      0,
+      1136.371882086168
+    ],
+    "_david_Chosen_Kick": [
+      3000,
+      669.6598639455784
+    ],
+    "_david_Silvertongue_Snare2": [
+      5000,
+      1000
+    ],
+    "_david_SniperGirl_LilSnare": [
+      7000,
+      1241.5873015873017
+    ],
+    "_david_Uriella_Bleep": [
+      10000,
+      2578.140589569161
+    ]
+  }
+}
